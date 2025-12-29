@@ -53,7 +53,7 @@ a:hover {
     text-decoration-color: var(--primary)
 }
 
-a, span, p, li {
+a, span, p, li, td, th {
     font-size: var(--content-small);
     line-height: 1.5;
 }
