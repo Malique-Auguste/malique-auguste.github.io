@@ -1,0 +1,50 @@
+#title {
+    padding: 0 15vw;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+}
+
+#title p {
+    font-size: var(--content-med);
+    line-height: 1.3;
+    max-width: 50vw;
+}
+
+#portfolio {
+    margin: 0 4vh 4vh 4vh;
+    padding-bottom: 4vh;
+    gap: 4vh;
+
+    display: flex;
+    flex-flow: row nowrap;
+    overflow-x: scroll;
+    overflow-y: hidden;
+
+}
+
+#portfolio::-webkit-scrollbar{
+    height: 10px;               /* horizontal scrollbar thickness */
+}
+
+#portfolio::-webkit-scrollbar-track{
+    background: var(--light-gray);
+}
+
+#portfolio::-webkit-scrollbar-thumb {
+    background: var(--muted-primary);
+
+}
+
+#portfolio::-webkit-scrollbar-thumb:hover {
+    background: var(--primary);
+}
+
+#portfolio > * {
+    flex-shrink: 0;
+    background-color: var(--extra-muted-primary);
+}
+
+#portfolio > *:hover {
+    background-color: transparent;
+}

@@ -1,0 +1,15 @@
+.project {
+    flex-shrink: 0;
+    height: 41vh;
+}
+
+.project > img {
+    object-fit: cover;
+    height: 100%;
+    mix-blend-mode: multiply;
+}
+
+.project > img:hover {
+    height: 102%;
+    mix-blend-mode: multiply;
+}

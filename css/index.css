@@ -1,0 +1,50 @@
+#content > div {
+    margin: 2vw;
+    flex: 1
+}
+
+#title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#headshot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#headshot > img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#title h1 {
+    font-size: var(--title);
+    display: block;
+    width: min-content;
+}
+
+#title span, #title a {
+    font-size: var(--content-large);
+}
+
+#content {
+    margin: 10vh 10vw;
+    display: flex;
+    width: 80vw;
+    height: 75vh;
+}
+
+#about {
+    margin: 0 20vw 15vw 20vw;
+}
+
+#about h2 {
+    font-size: var(--heading-large);
+}
+
+#about * {
+    font-size: var(--content-med);
+}

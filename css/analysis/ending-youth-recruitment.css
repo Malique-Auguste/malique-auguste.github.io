@@ -1,0 +1,119 @@
+img {
+    width: 100%
+}
+
+
+#section1 > .text-container {
+    background-image: url("../../media/Analysis/ending-youth-recruitment/Children_risk_abduction_into_militia_\(7831363424\).jpg");
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: center; /* Centers the image in the viewport */
+    background-size: cover; /* Ensures the image covers the entire area without stretching */
+    background-attachment: fixed; /* Key property: fixes the background relative to the viewport */
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    padding: 30vh 0;
+}
+
+#section1 > .text-container > div {
+    background-color: var(--background-color);
+    width: 15%;
+
+    padding: 2vh;
+}
+
+#section1 > .text-container > div > *{
+    display: block;
+}
+
+#section1 > .text-container > div > :first-child{
+    font-size: var(--content-large);
+    font-weight: bold;
+    margin-bottom: 1vh;
+    text-align: center;
+}
+
+span, p, a {
+    font-size: var(--content-small);
+}
+
+
+#section2 > .subsection1, #section3 > .subsection4 {
+    display: flex;
+    align-items: flex-start;
+    margin: 5vh 0;
+}
+
+#section2 > .subsection1 > .img-container, #section3 > .subsection4 > .img-container {
+    width: 55vw;
+    position: sticky;
+    top: 10vh;
+}
+
+#section2 > .subsection1 > .img-container > img, #section3 > .subsection4 > .img-container > img {
+    width: 100%;
+    height: auto;
+}
+
+#section2 > .subsection1 > .text-container, #section3 > .subsection4 > .text-container {
+    flex: 1; /* Take remaining space */
+    padding: 40vh 4vw;
+}
+
+#section2 > .subsection2 {
+    padding: 5vh 20vw 10vh 20vw;
+}
+
+#section2 > .img-container {
+    margin: 10vh 15vw;
+}
+
+#section2 > .img-container > img {
+    width: 100%;
+}
+
+#section3 > img {
+    width: 100%;
+}
+
+#section3 > .subsection1 {
+    margin: 10vh 20vw;
+}
+
+#section3 > .subsection2 {
+    background-image: url("../../media/Analysis/ending-youth-recruitment/10794436964_36646bf1f8_k.jpg");
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: center; /* Centers the image in the viewport */
+    background-size: cover; /* Ensures the image covers the entire area without stretching */
+    background-attachment: fixed; /* Key property: fixes the background relative to the viewport */
+
+    padding: 20vh;
+}
+
+#section3 > .subsection2 > .text-container {
+    width: 50vw;
+    background-color: var(--background-color);
+    padding: 5vh;
+}
+
+#section3 > .subsection3 {
+    margin: 10vh 20vw;
+}
+
+:is(#section4, #section5) > :is(p,ol, h3) {
+    margin: 0 20vw;
+}
+
+#section4 > p {
+    margin-top: 10vh;
+}
+
+#section5 h2 {
+    padding-bottom: 0;
+}
+
+#section5 li>a {
+    line-break: anywhere;
+}
