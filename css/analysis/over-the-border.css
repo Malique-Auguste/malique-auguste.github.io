@@ -1,31 +1,31 @@
-#section1 > :is(p, span, ol, h3) {
+.section1 > :is(p, span, ol, h3) {
     margin: 0 20vw;
 }
 
-#section2 {
+.section2 {
     display: flex;
     align-items: flex-start;
     margin: 15vh 0;
 }
 
-#section2 > .img-container {
+.section2 > .img-container {
     width: 50vw;
     position: sticky;
     top: 10vh;
 }
 
-#section2 > .img-container > img {
+.section2 > .img-container > img {
     width: 100%;
     height: auto;
 }
 
-#section2 > .text-container {
+.section2 > .text-container {
     flex: 1; /* Take remaining space */
     padding: 40vh 4vw;
 }
 
 
-#section3 {
+.section3 {
     background-image: url("../../media/Analysis/over-the-border/warship.jpg");
     background-repeat: no-repeat; /* Prevents the image from repeating */
     background-position: center; /* Centers the image in the viewport */
@@ -35,36 +35,36 @@
     padding: 30vh 10vw;
 }
 
-#section3 > *{
+.section3 > *{
     background-color: var(--background-color);
     padding: 4vh;
 }
 
-#section3 > .subsection1 {
+.section3 > .subsection1 {
     margin: 0 30vw 25vh 0;
 }
 
-#section3 > .subsection2 {
+.section3 > .subsection2 {
     margin: 0 10vw 25vh 10vw;
 }
 
-#section3 > .subsection3 {
+.section3 > .subsection3 {
     margin: 0 0 0 30vw
 }
 
-#section4 {
+.section4 {
     margin: 15vh 20vw;
 }
 
-#section5, #section6 {
+.section5, .section6 {
     margin-bottom: 15vh;
 }
 
-#section5 > :is(p, h3) {
+.section5 > :is(p, h3) {
     margin: 0 20vw;
 }
 
-#section5 > img {
+.section5 > img {
     width: 100%;
     margin-bottom: 10vh;
 }
@@ -73,11 +73,11 @@ li>a {
     line-break: anywhere;
 }
 
-#section6 > :is(p, span, ol, h3) {
+.section6 > :is(p, span, ol, h3) {
     margin: 0 20vw;
 }
 
-#section6 h2 {
+.section6 h2 {
     margin-top: 15vh;
     padding-bottom: 0;
 }

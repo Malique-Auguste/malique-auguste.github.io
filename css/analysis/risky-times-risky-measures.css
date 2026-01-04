@@ -1,0 +1,38 @@
+.section1 {
+    margin: 15vh 0;
+}
+
+.section1 > :is(p, span, ol, h3) {
+    margin: 0 20vw;
+}
+
+.section1 h2 {
+    margin-top: 15vh;
+    padding-bottom: 0;
+}
+
+#content > img {
+    width: 90vw;
+}
+
+.section2 {
+    display: flex;
+    align-items: flex-start;
+    margin: 15vh 0;
+}
+
+.section2 > .img-container {
+    width: 50vw;
+    position: sticky;
+    top: 10vh;
+}
+
+.section2 > .img-container > img {
+    width: 100%;
+    height: auto;
+}
+
+.section2 > .text-container {
+    flex: 1; /* Take remaining space */
+    padding: 40vh 4vw;
+}
