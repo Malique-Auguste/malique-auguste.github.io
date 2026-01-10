@@ -12,7 +12,7 @@
 }
 
 .img_container {
-    height: 15vw;
+    height: 25vh;
 }
 
 .img_container > img {
@@ -34,4 +34,19 @@
     padding: 0;
     font-size: var(--content-small);
     text-overflow: ellipsis;
+}
+
+@media (max-width: 1000px) {
+    .post {
+        text-decoration: none;
+        flex-shrink: 0;
+        height: 41vh;
+        width: 200px;
+
+        overflow: hidden;
+    }
+
+    .img_container {
+        height: 15vh;
+    }
 }

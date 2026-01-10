@@ -18,6 +18,16 @@ html {
     --content-large: 3rem;
     --content-med: 2rem;
     --content-small: 1.5rem;
+
+    --h-spacing-1: 2vw;
+    --h-spacing-2: 4vw;
+    --h-spacing-3: 8vw;
+    --h-spacing-4: 16vw;
+
+    --v-spacing-1: 2vh;
+    --v-spacing-2: 4vh;
+    --v-spacing-3: 8vh;
+    --v-spacing-4: 16vh;
 }
 
 * {
@@ -59,7 +69,7 @@ a, span, p, li, td, th {
 }
 
 ol {
-    padding-left: 2vw;
+    padding-left: var(--h-spacing-1);
 }
 
 li {
@@ -74,13 +84,11 @@ hr {
 
 nav {
     position: fixed;
-    left: 4vh;
-    top: 4vh;
+    left: var(--v-spacing-2);
+    top: var(--v-spacing-2);
 
     display: flex;
     flex-direction: row;
-
-    gap: 20px;
 }
 
 nav img {
@@ -112,4 +120,16 @@ html::-webkit-scrollbar-thumb {
 
 html::-webkit-scrollbar-thumb:hover {
     background: var(--primary);
+}
+
+@media (max-width: 1000px) {
+    html {
+        --title: 6rem;
+        --heading-large: 2.7rem;
+        --heading-med: 2rem;
+        --heading-small: 1.3rem;
+        --content-large: 2rem;
+        --content-med: 1.3rem;
+        --content-small: 1rem;
+    }
 }

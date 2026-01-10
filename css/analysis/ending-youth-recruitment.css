@@ -12,16 +12,20 @@ img {
 
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    gap: var(--h-spacing-2);
+    row-gap: var(--h-spacing-2);
 
     padding: 30vh 0;
 }
 
 .section1 > .text-container > div {
     background-color: var(--background-color);
-    width: 15%;
+    width: var(--h-spacing-4);
 
-    padding: 2vh;
+    padding: var(--v-spacing-1);
 }
 
 .section1 > .text-container > div > *{
@@ -43,13 +47,12 @@ span, p, a {
 .section2 > .subsection1, .section3 > .subsection4 {
     display: flex;
     align-items: flex-start;
-    margin: 5vh 0;
 }
 
 .section2 > .subsection1 > .img-container, .section3 > .subsection4 > .img-container {
     width: 55vw;
     position: sticky;
-    top: 10vh;
+    top: var(--v-spacing-3);
 }
 
 .section2 > .subsection1 > .img-container > img, .section3 > .subsection4 > .img-container > img {
@@ -59,15 +62,15 @@ span, p, a {
 
 .section2 > .subsection1 > .text-container, .section3 > .subsection4 > .text-container {
     flex: 1; /* Take remaining space */
-    padding: 40vh 4vw;
+    padding: 40vh var(--h-spacing-2);
 }
 
 .section2 > .subsection2 {
-    padding: 5vh 20vw 10vh 20vw;
+    padding: var(--v-spacing-2) var(--h-spacing-4) var(--v-spacing-3) var(--h-spacing-4);
 }
 
 .section2 > .img-container {
-    margin: 10vh 15vw;
+    margin: var(--v-spacing-3) var(--h-spacing-4);
 }
 
 .section2 > .img-container > img {
@@ -79,7 +82,7 @@ span, p, a {
 }
 
 .section3 > .subsection1 {
-    margin: 10vh 20vw;
+    margin: var(--v-spacing-4) var(--h-spacing-4);
 }
 
 .section3 > .subsection2 {
@@ -89,25 +92,24 @@ span, p, a {
     background-size: cover; /* Ensures the image covers the entire area without stretching */
     background-attachment: fixed; /* Key property: fixes the background relative to the viewport */
 
-    padding: 20vh;
+    padding: var(--v-spacing-4);
 }
 
 .section3 > .subsection2 > .text-container {
-    width: 50vw;
     background-color: var(--background-color);
-    padding: 5vh;
+    padding: var(--v-spacing-2);
 }
 
 .section3 > .subsection3 {
-    margin: 10vh 20vw;
+    margin: var(--v-spacing-4) var(--h-spacing-4);
 }
 
 :is(.section4, .section5) > :is(p,ol, h3) {
-    margin: 0 20vw;
+    margin: 0 var(--h-spacing-4);
 }
 
 .section4 > p {
-    margin-top: 10vh;
+    margin-top: var(--v-spacing-4);
 }
 
 .section5 h2 {
@@ -116,4 +118,41 @@ span, p, a {
 
 .section5 li>a {
     line-break: anywhere;
+}
+
+@media (max-width: 1000px) {
+    .section1 > .text-container > div{
+        width: 200px;
+    }
+
+    .section2 > .subsection1, .section3 > .subsection4 {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .section2 > .subsection1 > .img-container, .section3 > .subsection4 > .img-container {
+        width: 100%;
+        position: static;
+    }
+
+    .section2 > .subsection1 > .text-container, .section3 > .subsection4 > .text-container {
+        width: 100%;
+        flex: 0;
+        padding: var(--v-spacing-2) var(--h-spacing-4);
+    }
+
+    .section2 > .img-container {
+        margin: var(--v-spacing-2) 0 0 0;
+    }
+
+    .section3 > .subsection2 {
+        background-image: url("../../media/Analysis/ending-youth-recruitment/10794436964_36646bf1f8_k.jpg");
+        background-repeat: no-repeat; /* Prevents the image from repeating */
+        background-position: center; /* Centers the image in the viewport */
+        background-size: cover; /* Ensures the image covers the entire area without stretching */
+        background-attachment: fixed; /* Key property: fixes the background relative to the viewport */
+
+        padding: var(--h-spacing-4);
+    }
 }

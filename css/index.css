@@ -1,9 +1,16 @@
-#content > div {
-    margin: 2vw;
+#title{
+    margin: var(--v-spacing-3) var(--h-spacing-3);
+    display: flex;
+    width: auto;
+    height: 75vh;
+}
+
+#title > div {
+    margin: var(--h-spacing-1);
     flex: 1
 }
 
-#title {
+#text-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,25 +27,18 @@
     max-height: 100%;
 }
 
-#title h1 {
+#text-container h1 {
     font-size: var(--title);
     display: block;
     width: min-content;
 }
 
-#title span, #title a {
+#text-container span, #text-container a {
     font-size: var(--content-large);
 }
 
-#content {
-    margin: 10vh 10vw;
-    display: flex;
-    width: 80vw;
-    height: 75vh;
-}
-
 #about {
-    margin: 0 20vw 15vw 20vw;
+    margin: 0 var(--h-spacing-4) var(--v-spacing-4) var(--h-spacing-4);
 }
 
 #about h2 {
@@ -47,4 +47,12 @@
 
 #about * {
     font-size: var(--content-med);
+}
+
+
+@media (max-width: 1000px) {
+  #title {
+    flex-direction: column;
+    height: fit-content;
+  }
 }

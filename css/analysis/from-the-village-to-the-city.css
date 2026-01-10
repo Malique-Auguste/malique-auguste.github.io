@@ -1,13 +1,14 @@
 .section1, .section2 {
     display: flex;
     align-items: flex-start;
+    flex-direction: row;
     margin: 5vh 0;
 }
 
 .section1 > .img-container {
     width: 30vw;
     position: sticky;
-    top: 10vh;
+    top: var(--v-spacing-3);
 }
 
 :is(.section1, .section2) > .img-container > img {
@@ -17,17 +18,17 @@
 
 :is(.section1, .section2) > .text-container {
     flex: 1; /* Take remaining space */
-    padding: 40vh 4vw;
+    padding: 40vh var(--h-spacing-2);
 }
 
 .section2 > .img-container {
     width: 50vw;
     position: sticky;
-    top: 10vh;
+    top: var(--v-spacing-3);
 }
 
 .section3 {
-    margin: 0 10vw;
+    margin: 0 var(--h-spacing-3);
 }
 
 .section3 h3 {
@@ -55,11 +56,11 @@
 }
 
 .section4 {
-    margin: 15vh 0;
+    margin: var(--v-spacing-4) 0;
 }
 
 .section4 > :is(p, ol, h3) {
-    margin: 0 20vw;
+    margin: 0 var(--h-spacing-4);
 }
 
 h2 {
@@ -68,4 +69,33 @@ h2 {
 
 .section4 li>a {
     line-break: anywhere;
+}
+
+@media (max-width: 1000px) {
+    .section1, .section2 {
+        flex-direction: column;
+    }
+
+    :is(.section1, .section2) > .img-container {
+        width: 100%;
+        position: static;
+    }
+
+    :is(.section1, .section2) > .text-container {
+        width: 100%;
+        flex: 0;
+        padding: 0 var(--h-spacing-4);
+    }
+
+    .section3 table {
+        border-collapse: collapse;
+        overflow-x: auto;
+        display: block;
+        
+        width: 100%;
+    }
+
+    .section3 td {
+        min-width: 100px;
+    }
 }
