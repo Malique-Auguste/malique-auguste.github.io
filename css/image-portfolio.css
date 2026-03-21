@@ -1,0 +1,55 @@
+
+#grid {
+    height: 100vw;
+    position: relative;
+}
+
+#grid > div {
+    position: absolute;
+}
+
+#grid img {
+    object-fit: contain;
+    height: 100%;
+    width: 100%;
+}
+
+#cell1 {
+    top: 20vh;
+    left: 15vw;
+
+    height: 40vh;
+    width: 10vw;
+}
+
+#cell2 {
+    top: 0vh;
+    left: 30vw;
+
+    height: 80vh;
+    width: 25vw;
+}
+
+#cell3 {
+    top: 5vh;
+    left: 60vw;
+
+    height: 40vh;
+    width: 10vw;
+}
+
+#cell4 {
+    top: 45vh;
+    left: 60vw;
+
+    height: 80vh;
+    width: 25vw;
+}
+
+#cell5 {
+    top: 85vh;
+    left: 15vw;
+
+    height: 80vh;
+    width: 40vw;
+}
