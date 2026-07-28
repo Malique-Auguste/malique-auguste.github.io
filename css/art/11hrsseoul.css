@@ -10,7 +10,8 @@
 
 #cell3 {
     grid-column: 1/8;
-    grid-row: 5/8
+    grid-row: 5/8;
+
 }
 
 #cell4 {
