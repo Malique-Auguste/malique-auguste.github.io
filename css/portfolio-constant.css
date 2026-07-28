@@ -11,15 +11,14 @@
 }
 
 #portfolio {
-    margin: 0 var(--v-spacing-2) var(--v-spacing-2) var(--v-spacing-2);
+    margin: 0 var(--h-spacing-2) var(--v-spacing-2) var(--h-spacing-2);
     padding-bottom: var(--v-spacing-2);
     gap: var(--v-spacing-2);
 
     display: flex;
-    flex-flow: row nowrap;
-    overflow-x: scroll;
+    flex-flow: row wrap;
+    overflow-x: hidden;
     overflow-y: hidden;
-
 }
 
 #portfolio::-webkit-scrollbar{
@@ -40,10 +39,9 @@
 }
 
 #portfolio > * {
-    flex-shrink: 0;
-    background-color: var(--extra-muted-primary);
+    background-color: transparent;
 }
 
 #portfolio > *:hover {
-    background-color: transparent;
+    background-color: var(--extra-muted-primary);
 }

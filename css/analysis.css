@@ -1,18 +1,20 @@
 .post {
     text-decoration: none;
-    flex-shrink: 0;
-    height: 55vh;
-    width: 25vw;
+    height: 20vh;
+    width: 44vw;
+
+    gap: var(--v-spacing-1);
 
     overflow: hidden;
-}
 
-.post:hover img {
-    height: 102%;
+    display: flex;
+    align-items: stretch;
+    flex-direction: row;
 }
 
 .img_container {
-    height: 25vh;
+    height: 20vh;
+    width: 10vw;
 }
 
 .img_container > img {
@@ -23,7 +25,8 @@
 }
 
 .description {
-    padding: 1vw;
+    height: 20vh;
+    width: 30vw;
 }
 
 .description > h3 {
@@ -37,16 +40,4 @@
 }
 
 @media (max-width: 1000px) {
-    .post {
-        text-decoration: none;
-        flex-shrink: 0;
-        height: 41vh;
-        width: 200px;
-
-        overflow: hidden;
-    }
-
-    .img_container {
-        height: 15vh;
-    }
 }
