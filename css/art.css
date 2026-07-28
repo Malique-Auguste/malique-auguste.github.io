@@ -1,6 +1,31 @@
+#title {
+    padding: 0 var(--h-spacing-4);
+    height: 50vh;
+    display: flex;
+    align-items: center;
+}
+
+#title p {
+    font-size: var(--content-med);
+    max-width: 50vw;
+}
+
+#portfolio {
+    margin: 0 var(--h-spacing-2) var(--v-spacing-2) var(--h-spacing-2);
+    padding-bottom: var(--v-spacing-2);
+    gap: var(--v-spacing-2);
+
+    display: flex;
+    flex-flow: row wrap;
+}
+
 .project {
     flex-shrink: 0;
     height: 41vh;
+}
+
+.project:hover {
+    background-color: var(--extra-muted-primary);
 }
 
 .project > img {
