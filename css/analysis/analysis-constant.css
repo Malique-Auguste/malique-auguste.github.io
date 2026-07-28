@@ -6,6 +6,7 @@
 }
 
 #title p {
+    padding-top: var(--v-spacing-1);
     font-size: var(--content-med);
     max-width: 50vw;
 }
