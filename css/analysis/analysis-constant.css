@@ -16,7 +16,7 @@
 }
 
 h2{
-    padding: 0 var(--h-spacing-4) var(--v-spacing-4) var(--h-spacing-4);
+    padding: 0 var(--h-spacing-4) var(--v-spacing-2) var(--h-spacing-4);
 }
 
 .quote{
@@ -61,3 +61,6 @@ section {
     background: var(--primary);
 }
 
+li>a {
+    line-break: anywhere;
+}

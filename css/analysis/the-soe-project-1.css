@@ -1,0 +1,85 @@
+.section1 {
+    margin-top: 0;
+}
+
+:is(.section1, .section3, .section4) > :is(p, span, ol, h3), .section2 > .subsection3 {
+    margin: 0 var(--h-spacing-4)
+}
+
+.section2 > .subsection1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--v-spacing-4);
+}
+
+.section2 > .subsection1 > .img-container {
+    width: 30vw;
+}
+
+.section2 > .subsection1 > .img-container > img {
+    width: 100%;
+    height: auto;
+}
+
+.section2 > .subsection1 > .text-container {
+    flex: 1; /* Take remaining space */
+    padding: var(--v-spacing-4) var(--h-spacing-2);
+}
+
+
+.section2 > .subsection2 {
+    background-image: url("../../media/Analysis/the-soe-project-1/Police-officers-cops-aug_1.jpg");
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: center; /* Centers the image in the viewport */
+    background-size: cover; /* Ensures the image covers the entire area without stretching */
+    background-attachment: fixed; /* Key property: fixes the background relative to the viewport */
+
+    padding: var(--v-spacing-4) 0;
+    margin-bottom: var(--v-spacing-4);
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.section2 > .subsection2 > .text-container {
+    background-color: var(--background-color);
+    padding: var(--v-spacing-2);
+    width: 30vw;
+}
+
+
+@media (max-width: 800px) {
+    .section2 > .subsection1 {
+        flex-direction: column;
+        margin: 0 var(--h-spacing-4)
+    }
+
+    .section2 > .subsection1 > .img-container {
+        width: 100%;
+    }
+
+    .section2 > .subsection1 > .text-container {
+        flex: 1; /* Take remaining space */
+        padding: var(--v-spacing-2) 0 var(--v-spacing-4);
+    }
+
+    .section2 > .subsection2 {
+        padding: var(--v-spacing-2) var(--h-spacing-3);
+        margin-bottom: var(--v-spacing-4);
+
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-content: center;
+        justify-content: space-evenly;
+        gap: var(--v-spacing-2);
+    }
+
+    .section2 > .subsection2 > .text-container {
+        width: 100%;
+    }
+}
