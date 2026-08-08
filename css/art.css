@@ -18,11 +18,14 @@
 
     display: flex;
     flex-flow: row wrap;
+    justify-content: center;
 }
 
 .project {
     flex-shrink: 0;
-    height: 41vh;
+    height: auto;              /* let the container size to the image */
+    max-height: 41vh;
+    max-width: 92vw;
 }
 
 .project:hover {
@@ -31,11 +34,13 @@
 
 .project > img {
     object-fit: cover;
-    height: 100%;
-    mix-blend-mode: multiply;
+    height: auto;              /* release the forced 100% height */
+    width: auto;
+    max-height: 41vh;          /* cap vertically */
+    max-width: 92vw;  
 }
 
 .project > img:hover {
-    height: 102%;
+    transform: scale(1.02);
     mix-blend-mode: multiply;
 }

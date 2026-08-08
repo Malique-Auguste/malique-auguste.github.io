@@ -37,6 +37,7 @@
 
 .post:hover {
     background-color: var(--extra-muted-primary);
+    transform: scale(1.02);
 }
 
 .img_container {
