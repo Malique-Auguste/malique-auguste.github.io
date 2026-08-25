@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:site_name" content="Malique Auguste">
+    <meta property="og:type" content="website">
+    
+    <title>The SOE Project | Malique Auguste</title>
+    <link rel="shortcut icon" href="../../media/logo/favicon.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="../../css/constant.css">
+    <link rel="stylesheet" href="../../css/analysis/analysis-constant.css">
+    <link rel="stylesheet" href="../../css/analysis/the-soe-project-2.css">
+
+    <script>
+    MathJax = {
+        tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+        }
+    };
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js"></script>
+</head>
+<body>
+    <nav>
+        <a href="../../index.html">
+            <img src="../../media/logo/muted_logo.png" alt="home" id = "muted-nav">
+            <img src="../../media/logo/logo.png" alt="home">
+        </a>
+    </nav>
+
+    <div id = "title">
+        <div>
+            <h1>The SOE Project: Part 2</h1>
+            <p>Causal and statistical model | Aug 2026</p>
+        </div>
+    </div>
+
+    <div id = "content">
+        <section class = "section1">
+            <h2>Introduction</h2>
+            <p>Rigorous statistical analysis is necessary to understand how repeated states of emergency (SOEs) affect the rate of violent crime in Trinidad and Tobago (TnT). Conducting this statistical analysis requires two steps: further development of the Key Actor Removal Theory, and development of a statistical model.</p>
+        </section>
+
+        <hr>
+
+        <section class="section2">
+            <h2>The Key Actor Removal Theory and Causal Model</h2>
+            <div class = "subsection1">
+                <div class = "img-container">
+                    <img src="../../media/Analysis/the-soe-project-2/causal_model.png" alt="Causal Model">
+                </div>
+                <div class = "text-container">
+                    <p>As outlined in <a href="../analysis/the-soe-project-1.html">part 1 of this series</a>, during an SOE, the government of TnT has the special power to detain a criminal using a preventative detention order (PDO). The government uses PDOs to disrupt criminal networks, decreasing their ability to commit violent crime. If this theory were true, then the execution of a preventative detention order in a community (the independent variable, \(X\)) should cause a reduction in violent crime in the surrounding community (the dependent variable, \(Y\)). The effects of detentions are expected to be localised to a community, particularly because most gangs in TnT are small and community-based <sup>[4][6]</sup>. Additionally, I expect that the effects of a PDO will only be temporary because criminal networks/gangs can adapt to the disruption.</p>
+                    <br>
+                    <p>I also expect that the rate of violent crime, \(Y\), will be influenced by a host of other factors such as:</p>
+                    <br>
+                    <ul>
+                        <li>Beliefs, \(B\)</li>
+                        <li>Disruptions (pandemics, holidays, etc), \(D\)</li>
+                        <li>Economic Indicators, \(E\)</li>
+                        <li>Gang Prevalence / Strength, \(G\)</li>
+                        <li>Infrastructure, \(I\)</li>
+                        <li>Perceived Legal Consequences, \(L\)</li>
+                        <li>Population Demographics, \(P\)</li>
+                        <li>Weather, \(W\)</li>
+                    </ul>
+                    <br>
+                    <p>The graph, representing my causal model, shows how I expect these factors to be related. In the graph \(X → Y\)  means that \(X\) (the government executing a PDO in a community) somehow directly affects \(Y\) (the rate of violent crime in that community). Though my goal is to determine how \(X\) affects \(Y\), as shown in the graph, I expect there to be many interesting relationships between the factors. This will complicate the analysis.</p>
+                </div>
+            </div>
+        </section>
+
+        <hr>
+
+        <section class="section3">
+            <h2>Statistical Model</h2>
+            <div class = "subsection1">
+                <p>A naive approach to analysing the causal model would be to construct a dataset that lists national aggregates of each aforementioned variable. Each row of the dataset would outline the number of violent crimes committed throughout TnT that week, \(Y\), the number of PDOs executed, \(X\), and all the other relevant factors for that week. Using the ordinary least squares method (OLS), \(Y\) would be regressed against \(X\), with all the other variables treated as controls. Here \(A\) indicates the value of variable \(A\) during week \(t\). The regression equation for this statistical model is:</p>
+                <br>
+                <p>\[\begin{align*}
+                    Y_t = &\beta_1 X_t + \beta_2 B_t + \beta_3 D_t + \beta_4 E_t \\
+                            &+ \beta_5 G_t + \beta_6 I_t + \beta_7 L_t + \beta_8 P_t \\
+                            &+ \beta_9 W_t + \epsilon
+                            \end{align*}\]</p>
+                <br>
+                <p>After the regression is complete, we would have identified the effects of X on Y assuming that \(\beta\) is found to be statistically significant.</p>
+                <br>
+                <p>There are numerous issues with this statistical model, the majority of which stem from the assumptions of the OLS method. Below is a discussion of those assumptions <sup>[3][5]</sup>, the ways in which they are violated, and my plan to adapt this project's methodology in response.</p>
+            </div>
+            <div class = "subsection2">
+                <div class = "text-container">
+                    <h3>Assumption 1: The error term has a mean of zero.</h3>
+                    <p>Given the current model specification, the error term, \(\epsilon\), can not have a mean of zero because I have not accounted for there being some baseline rate of violent crime throughout the country. In the current setup,  subsumes the baseline crime rate. This issue could be solved by including a constant factor, \(c\). A single constant factor, however, would overlook the fact that crime rates vary throughout the country and from week-to-week.</p>
+                    <br>
+                    <p>The best solution would be to use two-way fixed effects, \(\alpha_i\) and \(\lambda_t\). \(\alpha_i\) would represent the baseline crime rate in geographic area \(i\) over the period of the study, whereas \(\lambda_t\) would represent the baseline crime rate during week \(t\) across the entire country. These two-way fixed effects thereby allow the statistical model to center its errors around the mean of zero <sup>[2]</sup>.</p>
+                    <br>
+                    <p>To accommodate these two way fixed effects, I will have to disaggregate the data to geographic subdivisions that make up the country such as cities or police administrative zones. The regression equation now becomes:</p>
+                    <br>
+                    <p>\[\begin{align*}
+                        Y_{i,t} = &\beta_1 X_{i,t} + \beta_2 B_{i,t} + \beta_3 D_{i,t} + \beta_4 E_{i,t} \\
+                                    &+ \beta_5 G_{i,t} + \beta_6 I_{i,t} + \beta_7 L_{i,t} + \beta_8 P_{i,t} \\
+                                    &+ \beta_9 W_{i,t} + \alpha_i + \lambda_t + \epsilon
+                                    \end{align*}\]</p>
+                    <br>
+                    <h3>Assumption 2: The regression model is linear.</h3>
+                    <p>The regression model is nonlinear because \(Y_{i,t}\) is not a continuous variable nor can it be determined by a linear combination of the current independent variables. Firstly, the rate of crime in a week, \(Y_{i,t}\), is non-negative and discrete. Half a murder cannot happen or be taken away.  Secondly, as each row of data now represents geographic subdivisions rather than the entire country, a lot of the \(Y_{i,t}\) variables will equal zero simply because no crime occurred in that region during the time frame under consideration. This will skew the data so that it cannot be linear. To account for the first two issues I suggest using a non-OLS method, and one designed particularly to study discrete data such as \(Y_{i,t}\).  The poisson, negative binomial, and pseudo-poisson maximum likelihood (PPML) methods are suitable techniques for discrete data <sup>[1][8]</sup>.</p>
+                    <br>
+                    <p>A third issue is that by considering geographic subdivisions rather than the country as a whole, I unknowingly made the assumption that variables in neighbouring regions do not affect the rate of violent crime in the region under consideration. This is wrong. Though I assume criminals in the largely community based gangs of TnT commit crime within their community, they may still cross the geographic borders that I specify to do so. I account for this issue by introducing a new spillover variable, \(S\), that will measure the number of PDOs executed in neighbouring geographic regions.</p>
+                    <br>
+                    <p>Lastly, \(Y_{i,t}\) is unlikely to be expressed as a linear combination of its current variables because the effect of a PDO is unlikely to be felt immediately. In reality, this effect may be felt in the following week or even month. I account for this issue by including leads which indicate the value of a variable in the preceding periods. Where \(A\) represents some variable, let \(A'_t\) be a vector of leads of \(A\) up to period \(t\) for some given number of leads \(j\). \(A'_t=(A'_t, A'_{t-1},..., A'_{t-j})\). Similarly \(\beta'\) is a vector of coefficients that correspond to each lead. The new regression equation becomes:</p>
+                    <br>
+                    <p>\[\begin{align*}
+                        Y_{i,t} = &\beta'_1 X'_{i,t} + \beta'_2 S'_{i,t} + \beta'_3 B'_{i,t} + \beta'_4 D'_{i,t} \\
+                                    &+ \beta'_5 E'_{i,t} + \beta'_6 G'_{i,t} + \beta'_7 I'_{i,t} + \beta'_8 L'_{i,t} \\
+                                    &+ \beta'_9 P'_{i,t} + \beta'_{10} W'_{i,t} + \alpha_i + \lambda_t + \epsilon
+                                    \end{align*}\]</p>
+                </div>
+                <div class = "img-container">
+                    <img src="../../media/Analysis/the-soe-project-2/tnt_map.jpg" alt="Map of TnT">
+                </div>
+            </div>
+            <div class ="subsection3">
+                <h3>Assumption 3: The independent variables are uncorrelated with the error term.</h3>
+                <p>If my causal model were perfect, then this assumption would hold true. However, perfection is impossible and thus there likely exists confounding or mediating variables that I have not considered. The effect of these unknown variables will be subsumed by the error term, , causing a correlation with the independent variables. Furthermore, data may not exist for all of the variables in my causal model leading to them being omitted from the statistical model. For example, I do not know how I would quantify “perceived legal consequences” week-by-week for each geographic area. Omitted variables, like unknown variables, will cause some correlation between the independent variables and error term.</p>
+                <br>
+                <p>Luckily, the two-way fixed effects introduced under assumption 1 will limit the correlation caused by unknown and omitted variables <sup>[2]</sup>. \(\lambda_t\), by representing the baseline crime rate within week \(t\), will subsume the effects of all variables that may change with time but are constant throughout the country at any given point in time. For example, Weather, \(W\), disruptions, \(D\), and some economic indicators such as national gdp, \(E\), vary with respect to time at the national level and thus are subsumed by \(t\). \(\alpha_i\), by representing the baseline crime rate within geographic area \(i\), will subsume the effects of all variables that may differ throughout subregions of the country but that are fixed over the course of the study. For example, beliefs, \(B\), population demographics, \(P\), infrastructure, \(I\), and some economic indicators such as poverty rates, \(E\), vary across communities but remain fixed over the the period under investigation, and thus are subsumed by \(i\). As a result, the inclusion of \(\lambda_t\) and \(\alpha_i\) in our statistical model, makes variables such as \(B, D, E, I, P,\) and \(W\) unnecessary. \(G\) and \(L\) are also excluded from the statistical model because I do not know how to quantify them. The regression equation now simplifies to:</p>
+                <br>
+                <p>\[Y_{i,t} = \beta'_1 X'_{i,t} + \beta'_2 S'_{i,t} + \alpha_i + \lambda_t + \epsilon\]</p>
+                <br>
+                <p>This is great because it retains much of the rigour of our causal model while focussing on our primary variables: \(Y_{i,t}, X_{i,t}\), and \(S_{i,t}\).</p>
+                <br>
+                <h3>Assumption 4: The error terms are uncorrelated with each other.</h3>
+                <p>The error terms are correlated with each other firstly because neighboring regions will have similar crime rates, and secondly because crime may follow trends over time that are unaccounted for.</p>
+                <br>
+                <p>My solution is to implement Conley spatial HAC standard errors <sup>[7]</sup>. Using this method, the statistical model can account for correlation across both neighboring time and space by explicitly outlining the spatial-temporal range in which correlations are expected. For example, based on theory I may expect correlations between the rates of violent crime within the proceeding month and within 10km from the geographic region, and thus I will specify that in the model.</p>
+                <br>
+                <h3>Assumptions 5: None of the independent variables is a perfect linear combination of the others.</h3>
+                <p>I do not expect this to be an issue because the causal model predicts that each independent variable uniquely and directly affects the rate of violent crime, \(Y_{i,t}\).</p>
+            </div>
+            <div class = "subsection4">
+                <div class = "text-container">
+                    <h3>Assumptions 6 & 7: The error terms have a constant variance and are normally distributed.</h3>
+                    <p>The error terms are not expected to have constant variance or be normally distributed. As discussed under assumption 2, \(Y_{i,t}\) will frequently equal zero, skewing the data away from a normal distribution. Secondly, it is possible that in areas with more resilient criminal networks the government will execute more PDOs on average as it is hard to identify the key criminal actors. Due to the resilience of these networks, the execution of any individual PDO may have less effect on crime rates, leading to an increase in the variance of outcomes. Thus the error terms may have a non-constant variance with respect to \(X_{i,t}\).</p>
+                    <br>
+                    <p>Both of these issues will be addressed by statistically modeling the data using the PPML method as mentioned under assumption 2. Unlike the poisson or negative binomial regression techniques, the PPML method naturally accounts for zero-bias and heteroskedasticity (non-constant variance) <sup>[8]</sup>.</p>
+                </div>
+                <div class = "img-container">
+                    <img src="../../media/Analysis/the-soe-project-2/error_variance.jpg" alt="Diagram of different types of variance in error">
+                </div>
+            </div>
+        </section>
+
+        <hr>
+
+        <section class = "section4">
+            <h2>Conclusion</h2>
+            <p>To understand how repeated SOEs have affected the rate of violent crime in TnT, I will construct a dataset where each row corresponds to a specific region of the country for a specific week. The variables in each row will be: the number of violent crime committed, \(Y_{i,t}\), the number of PDOs executed with leads for \(j\) weeks, \(X'_{i,t}\), and the number of PDOs executed in neighbouring regions with leads for \(j\) weeks \(S'_{i,t}\). It will be statistically modelled using the pseudo-maximum likelihood method and two way fixed effects: geographic region, \(\alpha_i\), and time period or week, \(\lambda_t\). In the following post I will discuss my data sources and collection before outlining preliminary results.</p>
+        </section>
+
+        <hr>
+
+        <section class="section5">
+            <h2>References</h2>
+            <h3>Sources</h3>
+            <ol>
+                <li>"Basic Count Regression." Regression Analysis of Count Data <a href="https://www.cambridge.org/core/books/abs/regression-analysis-of-count-data/basic-count-regression/147B25580DC6FC77B3E359F9C9B4E71C" target = "_blank" rel = "noopener noreferrer">https://www.cambridge.org/core/books/abs/regression-analysis-of-count-data/basic-count-regression/147B25580DC6FC77B3E359F9C9B4E71C</a></li>
+                <li>"Causal Panel Designs." Causal Inference - The Remix <a href="https://mixtape.scunning.com/08-panel_data" target = "_blank" rel = "noopener noreferrer">https://mixtape.scunning.com/08-panel_data</a></li>
+                <li>7 Classical Assumptions of Ordinary Least Squares (OLS) Linear Regression. <a href="https://statisticsbyjim.com/regression/ols-linear-regression-assumptions/" target = "_blank" rel = "noopener noreferrer">https://statisticsbyjim.com/regression/ols-linear-regression-assumptions/</a></li>
+                <li>Country policy and information note: Gangs, Trinidad and Tobago (Version 1.0). <a href="https://www.gov.uk/government/publications/trinidad-and-tobago-country-policy-and-information-notes/country-policy-and-information-note-gangs-trinidad-and-tobago-june-2026-accessible#assessment" target = "_blank" rel = "noopener noreferrer">https://www.gov.uk/government/publications/trinidad-and-tobago-country-policy-and-information-notes/country-policy-and-information-note-gangs-trinidad-and-tobago-june-2026-accessible#assessment</a></li>
+                <li>Exploring the 5 OLS Assumptions for Linear Regression Analysis. <a href="https://365datascience.com/tutorials/statistics-tutorials/ols-assumptions/" target = "_blank" rel = "noopener noreferrer">https://365datascience.com/tutorials/statistics-tutorials/ols-assumptions/</a></li>
+                <li>"Gangs in Trinidad and Tobago." Gangs in the Caribbean: Responses of State and Society. <a href="https://www.uwipress.com/9789766405076/gangs-in-the-caribbean/" target = "_blank" rel = "noopener noreferrer">https://www.uwipress.com/9789766405076/gangs-in-the-caribbean/</a></li>
+                <li>Introduction to conleyreg. <a href="https://cran.r-project.org/web/packages/conleyreg/vignettes/conleyreg_introduction.html" target = "_blank" rel = "noopener noreferrer">https://cran.r-project.org/web/packages/conleyreg/vignettes/conleyreg_introduction.html</a></li>
+                <li>"The Log of Gravity." The Review of Economics and Statistics. <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=380442" target = "_blank" rel = "noopener noreferrer">https://papers.ssrn.com/sol3/papers.cfm?abstract_id=380442</a></li>
+            </ol>
+
+            <h3>Pictures</h3>
+            <ol>
+                <li><a href="https://upload.wikimedia.org/wikipedia/commons/f/f0/Regional_corporations_and_municipalities_of_Trinidad_and_Tobago.svg" target = "_blank" rel = "noopener noreferrer">https://upload.wikimedia.org/wikipedia/commons/f/f0/Regional_corporations_and_municipalities_of_Trinidad_and_Tobago.svg</a></li>
+                <li><i>All diagrams are drawn by me.</i></li>
+            </ol>
+        </section>
+    </div>
+</body>
+</html>

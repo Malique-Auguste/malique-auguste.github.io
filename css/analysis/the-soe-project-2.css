@@ -1,0 +1,99 @@
+.section1 {
+    margin-top: 0;
+}
+
+:is(.section1, .section3, .section4, .section5) > :is(p, span, ol, h3), .section2 > .subsection3 {
+    margin: 0 var(--h-spacing-4)
+}
+
+.section2 > .subsection1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: var(--v-spacing-3) 0;
+}
+
+.section2 > .subsection1 > .img-container {
+    width: 30vw;
+    position: sticky;
+    top: var(--v-spacing-4)
+}
+
+.section2 > .subsection1 > .img-container > img {
+    width: 100%;
+    height: auto;
+}
+
+.section2 > .subsection1 > .text-container {
+    flex: 1; /* Take remaining space */
+    padding: var(--v-spacing-4) var(--h-spacing-2);
+}
+
+
+.section3 > :is(.subsection1, .subsection3) {
+    margin: 0 var(--h-spacing-4);
+}
+
+.section3 > :is(.subsection2, .subsection4) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: var(--v-spacing-4) 0;
+}
+
+.section3 > .subsection2 > .img-container {
+    width: 40vw;
+    position: sticky;
+    top: var(--v-spacing-3)
+}
+
+.section3 > .subsection4 > .img-container {
+    width: 40vw;
+    position: sticky;
+    top: var(--v-spacing-4)
+}
+
+.section3 > :is(.subsection2, .subsection4) > .img-container > img {
+    width: 100%;
+    height: auto;
+}
+
+.section3 > :is(.subsection2, .subsection4) > .text-container {
+    flex: 1; /* Take remaining space */
+    padding: var(--v-spacing-4) var(--h-spacing-2);
+}
+
+
+@media (max-width: 800px) {
+    .section2 > .subsection1 {
+        flex-direction: column;
+        margin: 0 var(--h-spacing-4)
+    }
+
+    .section2 > .subsection1 > .img-container {
+        width: 100%;
+        position: static;
+    }
+
+    .section2 > .subsection1 > .text-container {
+        padding: var(--v-spacing-2) 0 0 0;
+    }
+
+    .section3 > :is(.subsection2, .subsection4) {
+        flex-direction: column;
+        margin: 0 var(--h-spacing-4);
+    }
+
+    .section3 > :is(.subsection2, .subsection4) > .text-container {
+        padding: 0;
+        width:100%;
+    }
+
+    .section3 > :is(.subsection2, .subsection4) > .img-container {
+        width: 100%;
+        position: static;
+        margin-top: var(--v-spacing-2);
+    }
+}
