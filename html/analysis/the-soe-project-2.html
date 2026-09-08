@@ -6,7 +6,7 @@
     <meta property="og:site_name" content="Malique Auguste">
     <meta property="og:type" content="website">
     
-    <title>The SOE Project | Malique Auguste</title>
+    <title>The SOE Project: Part 2 | Malique Auguste</title>
     <link rel="shortcut icon" href="../../media/logo/favicon.png" type="image/x-icon">
 
     <link rel="stylesheet" href="../../css/constant.css">
@@ -86,7 +86,7 @@
                             &+ \beta_9 W_t + \epsilon
                             \end{align*}\]</p>
                 <br>
-                <p>After the regression is complete, we would have identified the effects of X on Y assuming that \(\beta\) is found to be statistically significant.</p>
+                <p>After the regression is complete, we would have identified the effects of X on Y assuming that \(\beta_1\) is found to be statistically significant.</p>
                 <br>
                 <p>There are numerous issues with this statistical model, the majority of which stem from the assumptions of the OLS method <sup>[3][5]</sup>. Below is a discussion of those assumptions, the ways in which they are violated, and my plan to adapt this project's methodology in response.</p>
             </div>
@@ -110,7 +110,7 @@
                     <br>
                     <p>A third issue is that by considering geographic subdivisions rather than the country as a whole, I unknowingly made the assumption that variables in neighbouring regions do not affect the rate of violent crime in the region under consideration. This is wrong. Though I assume criminals in the largely community based gangs of TnT commit crime within their community, they may still cross the geographic borders that I specify to do so. I account for this issue by introducing a new spillover variable, \(S\), that will measure the number of PDOs executed in neighbouring geographic regions.</p>
                     <br>
-                    <p>Lastly, \(Y_{i,t}\) is unlikely to be expressed as a linear combination of its current variables because the effect of a PDO is unlikely to be felt immediately. In reality, this effect may be felt in the following week or even month. I account for this issue by including leads of the variables in the preceding periods. Where \(A\) represents some variable, let \(A'_t\) be a vector of leads of \(A\) up to period \(t\) for some given number of leads \(j\). \(A'_t=(A'_t, A'_{t-1},..., A'_{t-j})\). Similarly \(\beta'\) is a vector of coefficients that correspond to each lead. The new regression equation becomes:</p>
+                    <p>Lastly, \(Y_{i,t}\) is unlikely to be expressed as a linear combination of its current variables because the effect of a PDO is unlikely to be felt immediately. In reality, this effect may be felt in the following week or even month. I account for this issue by including lags of the variables in the preceding periods. Where \(A\) represents some variable, let \(A'_t\) be a vector of lags of \(A\) up to period \(t\) for some given number of lags \(j\). \(A'_t=(A_t, A_{t-1},..., A_{t-j})\). Similarly \(\beta'\) is a vector of coefficients that correspond to each lead. The new regression equation becomes:</p>
                     <br>
                     <p>\[\begin{align*}
                         Y_{i,t} = &\beta'_1 X'_{i,t} + \beta'_2 S'_{i,t} + \beta'_3 B'_{i,t} + \beta'_4 D'_{i,t} \\
@@ -157,7 +157,7 @@
 
         <section class = "section4">
             <h2>Conclusion</h2>
-            <p>To understand how repeated SOEs affect the rate of violent crime in TnT, I will construct a dataset where each row corresponds to a specific region of the country for a specific week. The variables in each row will be: the number of violent crime committed, \(Y_{i,t}\), the number of PDOs executed with leads for \(j\) weeks, \(X'_{i,t}\), and the number of PDOs executed in neighbouring regions with leads for \(j\) weeks, \(S'_{i,t}\). I will statistically model this dataset using the pseudo-maximum likelihood method and two way fixed effects: geographic region, \(\alpha_i\), and time period or week, \(\lambda_t\). In the following post I will discuss my data sources and collection before outlining my preliminary results.</p>
+            <p>To understand how repeated SOEs affect the rate of violent crime in TnT, I will construct a dataset where each row corresponds to a specific region of the country for a specific week. The variables in each row will be: the number of violent crime committed, \(Y_{i,t}\), the number of PDOs executed with lags for \(j\) weeks, \(X'_{i,t}\), and the number of PDOs executed in neighbouring regions with lags for \(j\) weeks, \(S'_{i,t}\). I will statistically model this dataset using the pseudo-maximum likelihood method and two way fixed effects: geographic region, \(\alpha_i\), and time period or week, \(\lambda_t\). In the following post I will discuss my data sources and collection before outlining my preliminary results.</p>
         </section>
 
         <hr>
