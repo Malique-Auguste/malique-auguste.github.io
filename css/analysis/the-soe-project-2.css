@@ -40,7 +40,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
-    margin: var(--v-spacing-4) 0;
+    margin: var(--v-spacing-4) var(--h-spacing-2);
 }
 
 .section3 > .subsection2 > .img-container {
@@ -62,7 +62,7 @@
 
 .section3 > :is(.subsection2, .subsection4) > .text-container {
     flex: 1; /* Take remaining space */
-    padding: var(--v-spacing-4) var(--h-spacing-2);
+    padding: var(--v-spacing-4) var(--h-spacing-2) var(--v-spacing-4) 0;
 }
 
 
