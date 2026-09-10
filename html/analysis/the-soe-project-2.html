@@ -138,14 +138,14 @@
                 <p>My solution is to implement Conley spatial HAC standard errors <sup>[7]</sup>. Using this method, the statistical model can account for correlation across both neighboring space and time by explicitly outlining the spatial-temporal range in which correlations are expected. For example, based on theory I may expect that there are correlations between violent crimes within the span of a month and within 10km from the geographic region, and thus I will specify that in the model.</p>
                 <br>
                 <h3>Assumptions 5: None of the independent variables is a perfect linear combination of the others.</h3>
-                <p>I do not expect this to be an issue because the causal model predicts that each independent variable uniquely and directly affects the rate of violent crime, \(Y_{i,t}\).</p>
+                <p>I do not expect this to be an issue because both \(X_{i,t}\) and \(S_{i,t}\) count different crimes.</p>
             </div>
             <div class = "subsection4">
                 <div class = "text-container">
                     <h3>Assumptions 6 & 7: The error terms have a constant variance and are normally distributed.</h3>
                     <p>The error terms are not expected to have constant variance or be normally distributed. As discussed under assumption 2, \(Y_{i,t}\) will frequently equal zero, skewing the data away from a normal distribution. Secondly, it is possible that the government will execute more PDOs in areas with more resilient criminal networks, as it is harder for them to identify the key criminal actors. Due to the resilience of these networks, the execution of any individual PDO may have less effect on crime rates, leading to an increase in the variance of outcomes. Thus the error terms may have a non-constant variance with respect to \(X_{i,t}\).</p>
                     <br>
-                    <p>Both of these issues will be addressed by statistically modeling the data using the PPML method as mentioned under assumption 2. Unlike the poisson or negative binomial regression techniques, the PPML method naturally accounts for zero-bias and heteroskedasticity (non-constant variance) <sup>[8]</sup>.</p>
+                    <p>Both of these issues will be addressed by statistically modeling the data using the PPML method as mentioned under assumption 2. Unlike the negative binomial regression techniques, the PPML method naturally accounts for zero-bias and heteroskedasticity (non-constant variance) <sup>[8]</sup>.</p>
                 </div>
                 <div class = "img-container">
                     <img src="../../media/Analysis/the-soe-project-2/error_variance.jpg" alt="Diagram of different types of variance in error">
@@ -157,7 +157,9 @@
 
         <section class = "section4">
             <h2>Conclusion</h2>
-            <p>To understand how repeated SOEs affect the rate of violent crime in TnT, I will construct a dataset where each row corresponds to a specific region of the country for a specific week. The variables in each row will be: the number of violent crime committed, \(Y_{i,t}\), the number of PDOs executed with lags for \(j\) weeks, \(X'_{i,t}\), and the number of PDOs executed in neighbouring regions with lags for \(j\) weeks, \(S'_{i,t}\). I will statistically model this dataset using the pseudo-maximum likelihood method and two way fixed effects: geographic region, \(\alpha_i\), and time period or week, \(\lambda_t\). In the following post I will discuss my data sources and collection before outlining my preliminary results.</p>
+            <p>To understand how repeated SOEs affect the rate of violent crime in TnT, I will construct a dataset where each row corresponds to a specific region of the country for a specific week. The variables in each row will be: the number of violent crime committed, \(Y_{i,t}\), the number of PDOs executed with lags for \(j\) weeks, \(X'_{i,t}\), and the number of PDOs executed in neighbouring regions with lags for \(j\) weeks, \(S'_{i,t}\). I will statistically model this dataset using the pseudo-maximum likelihood method and two way fixed effects: geographic region, \(\alpha_i\), and time period or week, \(\lambda_t\). Given that I am using the PPML method, the regression equation is now:</p>
+            <p>\[\text{log}(E[Y_{i,t}|X,S])  = \beta'_1 X'_{i,t} + \beta'_2 S'_{i,t} + \alpha_i + \lambda_t\]</p>            
+            <p>In the following post I will discuss my data sources and collection before outlining my preliminary results.</p>
         </section>
 
         <hr>
