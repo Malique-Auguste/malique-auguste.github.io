@@ -144,13 +144,13 @@
                                 <td>Precise</td>
                                 <td style = "text-align: center">-0.90 (-59%) **</td>
                                 <td style = "text-align: center">-0.92 (-60%) *</td>
-                                <td style = "text-align: center">-0.88 (59%) *</td>
+                                <td style = "text-align: center">-0.88 (-59%) *</td>
                         </tr>
                         <tr>
                                 <td>Imprecise</td>
                                 <td style = "text-align: center">-0.71 (-51%)</td>
                                 <td style = "text-align: center">-0.78 (-54%)</td>
-                                <td style = "text-align: center">-0.79 (55%) *</td>
+                                <td style = "text-align: center">-0.79 (-55%) *</td>
                         </tr>
 
                         <!-- 30.4km<sup>2</sup> Group -->
@@ -160,20 +160,20 @@
                                 <td>Precise</td>
                                 <td style = "text-align: center">-0.67 (-49%) *</td>
                                 <td style = "text-align: center">-0.77 (-54%)</td>
-                                <td style = "text-align: center">-1.44 (76%) **</td>
+                                <td style = "text-align: center">-1.44 (-76%) **</td>
                         </tr>
                         <tr>
                                 <td>Imprecise</td>
                                 <td style = "text-align: center">-0.41 (-34%)</td>
                                 <td style = "text-align: center">-0.46 (-37%)</td>
-                                <td style = "text-align: center">-0.64 (47%)</td>
+                                <td style = "text-align: center">-0.64 (-47%)</td>
                         </tr>
                         <tr>
                                 <td rowspan="2">7 days</td>
                                 <td>Precise</td>
                                 <td style = "text-align: center">-0.51 (-40%) ***</td>
                                 <td style = "text-align: center">-0.56 (-43%) *</td>
-                                <td style = "text-align: center">-0.61 (46%) ***</td>
+                                <td style = "text-align: center">-0.61 (-46%) ***</td>
                         </tr>
                         <tr>
                                 <td>Imprecise</td>
@@ -226,7 +226,7 @@
                     <h3>The Effect of a PDO Rebounds</h3>
                     <p>To visualize how a PDO affects local violent crime observe the following graphs. These graphs plot the cumulative effect of a PDO (\(\beta_1\)) at each period and are drawn from the models that use 8-lags and precise data. The top graph shows models that use 4-day long periods whereas the lower graph shows models that use 7-day long periods.</p>
                     <br>
-                    <p>Using the top graph, I can say that if a PDO is executed in an 11km<sup>2</sup> grid cell, then over 2 subsequent periods (8 days) violent crime will decrease by 65%, whereas in 4 periods (16 days), violent crime will have decreased by 78%.</p>
+                    <p>Using the top graph, I can say that if a PDO is executed in an 11km<sup>2</sup> grid cell, then in 2 subsequent periods (8 days) violent crime will decrease by 65%, whereas in 4 periods (16 days), violent crime will decrease by 78%.</p>
                     <br>
                     <p>As shown in both graphs, the larger the geographic area under consideration, the less a PDO decreases local violent crime rates. This is clear because the line for 11km<sup>2</sup> is consistently below the line for 30.4km<sup>2</sup>, which is consistently below the line for 121.6km<sup>2</sup>. Additionally, there appears to be a rebound effect because the cumulative effect of a PDO on violent crime appears to hit its peak 35 days after the PDO was executed, after which the effect decreases towards 0. Though inconclusive, this suggests that in weeks 6 to 8, there is actually violent crime being caused by the PDO, which makes up for the crime that it prevented.</p>
                 </div>
@@ -247,7 +247,7 @@
                 <br>
                 <p>\[e^{\alpha_i + \lambda_t} = \frac{E[Y_{i,t}|X,S]}{e^{\beta'_1 X^d_{i,t-1}} \times e^{\beta'_2 S^d_{i,t-1}}}\]</p>
                 <br>
-                <p>Therefore the amount of violent crime prevented by executing PDOs is \(E[Y_{i,t}|X,S] - e^{\alpha_i + \lambda_t}\). Confidence intervals for these figures will be calculated using parametric bootstrapping. An estimate of these values is given below:</p>
+                <p>Therefore the amount of violent crime prevented by executing PDOs is \(e^{\alpha_i + \lambda_t} - E[Y_{i,t}|X,S]\). Confidence intervals for these figures will be calculated using parametric bootstrapping. An estimate of these values is given below:</p>
             </div>
 
             <div class = "subsection6">
