@@ -67,7 +67,7 @@
                 A^d_t = &(A_t - A_{t-1}, A_{t-1} - A_{t-2},\\
                         & …, A_{t-j+1} - A_{t-j}, A_{t-j})
                 \end{align*}\]</p>
-            <p>In addition to making the coefficients easier to interpret, this adjustment also allows me to limit the effects of correlation between the lags. The regression equation is now:</p>
+            <p>In addition to making the coefficients easier to interpret (\(\beta_1\) and \(\beta_2\) now indicate the cummulative effect of a PDO after a given period), this adjustment also allows me to limit the effects of correlation between the lags. The regression equation is now:</p>
             <br>
             <p>\[\begin{align*}
                     \text{log}(E[Y_{i,t}|X,S]) = &\beta'_1 X^d_{i,t-1} + \beta'_2 S^d_{i,t-1} \\
@@ -95,7 +95,7 @@
 
             <div class = "subsection1">
                 <h3>PDOs Negatively Affect Violent Crime</h3>
-                <p>Overwhelmingly, the models predict that the execution of a PDO in a community decreases violent crime within that community. Across 23 of the 24 model specifications, the final cumulative effect of a PDO on violent crime is negative, and the majority of these results are statistically significant.</p>
+                <p>Overwhelmingly, the models predict that if a PDO is execute in a community then violent crime will decrease within that community. Across 23 of the 24 model specifications, the final cumulative effect of a PDO on violent crime is negative, and the majority of these results are statistically significant.</p>
             </div>
 
             <div class = "subsection2">
@@ -216,15 +216,17 @@
 
             <div class="subsection3">
                 <h3>PDOs are Statistical Significant</h3>
-                <p>As expected, cumulative effects are less statistically significant at higher levels of aggregation with regard to geographic subdivisions and with how precisely violent crime is defined. Of the models that use 121.6km<sup>2</sup> grid cells, 6/8 of the final cumulative effects are insignificant, whereas of the models that use 30.4km<sup>2</sup> grid cells 2/8 of the final cumulative effects are insignificant, whereas of the models that use 11km<sup>2</sup> grid cells, only 1/8 of them are insignificant. Similarly, when models used precise definitions of violent crime, only 2/12 of them were statistically insignificant, whereas, when models used imprecise definitions of violent crime 7/12 of them were statistically insignificant. Notably, the amount of models that were statistically significant using 4-day long time intervals is the same as those that use week-long intervals.</p>
+                <p>As expected, cumulative effects are less statistically significant at higher levels of aggregation with regard to geographic subdivisions and with how "violent crime" is defined. Of the models that use 121.6km<sup>2</sup> grid cells, 6 of 8 of the final cumulative effects are insignificant, whereas of the models that use 30.4km<sup>2</sup> grid cells, 2 of 8 of the final cumulative effects are insignificant. In line with this finding, of the models that use 11km<sup>2</sup> grid cells, only 1 of 8 of them are insignificant. Similarly, when models used precise definitions of violent crime, only 2 of 12 of them were statistically insignificant, whereas, when models used imprecise definitions of violent crime 7 of 12 of them were statistically insignificant. Notably, the amount of models that were statistically significant using 4-day long time intervals is the same as those that use week-long intervals.</p>
                 <br>
-                <p>If I only consider the results from models that use 30.4km<sup>2</sup> or 11km<sup>2</sup> grid cells and that use the precise definition of violent crime, then all results are statistically significant at the 95% confidence level, three quarters of them are significant at the 99% level, and half are significant at the 99.9% level.</p>
+                <p>If I only consider the results from models that use 30.4km<sup>2</sup> or 11km<sup>2</sup> grid cells and that use the precise definition of violent crime, all the results are statistically significant at the 95% confidence level, three quarters of them are significant at the 99% level, and half are significant at the 99.9% level.</p>
             </div>
 
             <div class = "subsection4">
                 <div class = "text-container">
-                    <h3>Visualization of the Cummulative Effect of a PDO</h3>
-                    <p>To visualize how a PDO affects local violent crime observe the following graphs. These graphs plot the cumulative effect of a PDO (\(\beta_1\)) at each period and are drawn from the models that use 8-lags and precise data.</p>
+                    <h3>The Effect of a PDO Rebounds</h3>
+                    <p>To visualize how a PDO affects local violent crime observe the following graphs. These graphs plot the cumulative effect of a PDO (\(\beta_1\)) at each period and are drawn from the models that use 8-lags and precise data. The top graph shows models that use 4-day long periods whereas the lower graph shows models that use 7-day long periods.</p>
+                    <br>
+                    <p>Using the top graph, I can say that if a PDO is executed in an 11km<sup>2</sup> grid cell, then over 2 subsequent periods (8 days) violent crime will decrease by 65%, whereas in 4 periods (16 days), violent crime will have decreased by 78%.</p>
                     <br>
                     <p>As shown in both graphs, the larger the geographic area under consideration, the less a PDO decreases local violent crime rates. This is clear because the line for 11km<sup>2</sup> is consistently below the line for 30.4km<sup>2</sup>, which is consistently below the line for 121.6km<sup>2</sup>. Additionally, there appears to be a rebound effect because the cumulative effect of a PDO on violent crime appears to hit its peak 35 days after the PDO was executed, after which the effect decreases towards 0. Though inconclusive, this suggests that in weeks 6 to 8, there is actually violent crime being caused by the PDO, which makes up for the crime that it prevented.</p>
                 </div>
@@ -237,7 +239,7 @@
 
             <div class = "subsection5">
                 <h3>Violent Crimes Prevented</h3>
-                <p>To investigate this further, I produce estimates of the amount of crime prevented by the execution of PDOs throughout this study. Rewriting the regression equation in the exponential form:</p>
+                <p>To investigate this further, I estimate how much violent crime the governemnt of TnT prevented by executing PDOs in 2025. The regression equation in exponential form is:</p>
                 <br>
                 <p>\[E[Y_{i,t}|X,S] = e^{\beta'_1 X^d_{i,t-1} + \beta'_2 S^d_{i,t-1} + \alpha_i + \lambda_t}\]</p>
                 <br>
@@ -332,7 +334,10 @@
             </div>
 
             <div class = "subsection5">
-                <p>As shown by the table above, the models that use short time periods, such as 4 days, predict that PDOs decreased crime. When a longer view is taken, however, such as with the models that use 7 day periods, the results are statistically insignificant from zero. In the long run the execution of a PDO doesn’t reduce violent crime, even if it appears to in the short run.</p> 
+                <p>As shown by the table above, the models that use short time periods, such as 4 days, predict that PDOs decreased crime. When a longer view is taken, however, such as with the models that use 7 day periods, the results are statistically insignificant from zero. In the long run, the execution of a PDO doesn’t reduce violent crime, even if it appears to in the short run.</p> 
+                <br>
+                <h3>The Effect of Spillover is Minimal and Inconclusive</h3>
+                <p>Generally spillover was not found to be statistically significant. In only about half of all of the models was \(S_{i,t}\) found to be significant at the 1st lag. Notably, in all of the cases where it was statistically significant, its coefficient was positive at the 95% level. Though inconclusive, this suggests some sort of displacement effect. When a PDO is executed, free criminal actors move from that area into neighbouring communities, causing an uptick in violence.</p>
             </div>
 
 
@@ -347,14 +352,14 @@
             <h3>Reverse Causality</h3>
             <p>If the government of TnT executed PDOs in areas where they observed violent crime rising, then this model would be invalidated. PDOs would not cause some change in violent crime as we’ve found, but instead violent crime would cause some change in PDOs. To test for this I introduce leads into \(X^d_{i,t}\) and \(S^d_{i,t}\). If these leads are found to be significant in predicting \(Y_{i,t}\) then that is evidence that reverse causality is affecting my statistical model.</p>
             <br>
-            <p>Of the 12 model specifications using precise definitions of “violence”, 3 of these models had one of the leads for X being significant and 1 of the models had one of the leads for Y being significant. In other words, 8 out of 12 of the models found none of the leads to be significant. Again in other words 44 out of the 48 leads across the 12 model specifications were found to be insignificant. Though it is not conclusive, this is an indication that reverse causality is not an issue.</p>
+            <p>I specified 12 models using precise definitions of “violence”. In 3 of these models, one of the leads for \(X_{i,t}\) were significant, and in 1 of these models, one of the leads for \(Y_{i,t}\) was significant. In other words, 8 out of 12 of the models found none of the leads to be significant. Again, in other words, 44 out of the 48 leads across the 12 model specifications were found to be insignificant. Though it is not conclusive, this is an indication that reverse causality is not an issue.</p>
             <br>
             <h3>Autocorrelation</h3>
-            <p>In <a href="../analysis/the-soe-project-2.html">part 2 of the series</a> I said that I would use Conley spatial HAC standard errors to account for autocorrelation both spatially and temporally. However, I could not find a software package (prewritten tool) that would allow me to account for temporal autocorrelation while using a PPML statistical model. I was only able to account for spatial autocorrelation directly by directly setting the radius in which I expect there to be autocorrelation. Since gangs are expected to be community based, for the same reason that I only measure spillover using crime that occurred in the directly neighbouring regions, I set my radius of spatial autocorrelation to only cover the neighbouring regions.</p>
+            <p>In <a href="../analysis/the-soe-project-2.html">part 2 of the series</a> I said that I would use Conley spatial HAC standard errors to account for autocorrelation both spatially and temporally. However, I could not find a software package (prewritten tool) that would allow me to account for temporal autocorrelation while using a PPML statistical model. I was able to account for spatial autocorrelation by setting the radius in which I expect there to be autocorrelation. Since gangs are expected to be community based, for the same reason that I only measure spillover using crime that occurred in the directly neighbouring regions, I set my radius of spatial autocorrelation to only cover the neighbouring regions.</p>
             <br>
-            <p>Though I do not directly handle temporal autocorrelation, I do not expect it to be a significant issue. This can be tested by regressing violent crime against lagged values of itself. If the lagged values are a positive and statistically significant predictor of the current figure, then that presents an issue. However, after running the regressions, the lagged value of violent crime is rarely significant and when it is, it negatively predicts violent crime in the present period. This means that violent crime in any specific geographic subdivision is a rare event, and combined with the lack of reverse causality, this is not an issue.</p>
+            <p>Though I do not directly handle temporal autocorrelation, I do not expect it to be a significant issue. I justify this by regressing violent crime against lagged values of itself. If the lagged values are a positive and statistically significant predictor of the current figure, then that indicates temporal autocorrelation, presenting an issue. However, after running the regressions, the lagged value of violent crime is rarely significant and when it is, it negatively predicts violent crime in the present period. This means that violent crime in any specific geographic subdivision is a rare event, and combined with the lack of reverse causality, temporal autocorrelation is not an issue.</p>
             <br>
-            <p>Still, it is possible that the Conley spatial HAC standard errors do not accurately account for autocorrelation. As another quick robustness check, I re-estimated the models using only the precise data and 8-lags using two supplemental variance estimates: clustering only on the grid cell and on the grid cell and time period. The results remain robust as though some variables lose significance, the final cumulative effects that were previously significant, remain significant at that 95% level.</p>
+            <p>Still, it is possible that the Conley spatial HAC standard errors do not accurately account for autocorrelation. As another quick robustness check, I re-estimated the models (with precise data and 8-lags) using two supplemental variance estimates: clustering only on the grid cell, and on the grid cell and time period. The results remain robust as, though some variables lose significance, the final cumulative effects that were previously significant, remain significant at that 95% level.</p>
         </section>
 
         <hr>
@@ -363,9 +368,9 @@
             <h2>Conclusion</h2>
             <p>When I first began this series, I theorized that “When the government of Trinidad and Tobago (TnT) declares a state of emergency to combat gangs, … it is swinging a hammer at a sponge. They only succeed in compressing the problem, which then rebounds.” It seems, at least for now, that my gut was right.</p>
             <br>
-            <p>When the government of Trinidad and Tobago (TnT) executed a preventative detention order (PDO) in 2025 they decreased local violent crime in the short term, but, in the long term, the PDO’s effect is unclear. When criminal actors are removed from their networks, violent crime decreases where they’re from. This decrease is not permanent however. In fact it appears that with a long enough horizon, the execution of a PDO may actually cause harm. Though the results aren’t conclusive enough to say this with certainty, this finding is concerning.</p>
+            <p>When the government of Trinidad and Tobago (TnT) executed a preventative detention order (PDO) in 2025, they decreased violent crime in the short term, but, in the long term, the PDO’s effect is unclear. When criminal actors are removed from their networks, violent crime decreases where they’re from. This decrease is not permanent however. In fact, it appears that with a long enough horizon, the execution of a PDO may actually cause harm. Though the results aren’t conclusive enough to say this with certainty, this finding is concerning.</p>
             <br>
-            <p>This is not a conclusive statement about the effect of states of emergency (SOE) in TnT, but rather it is a preliminary statement about how PDOs executed under these SOEs affect violent crime. Despite the 24 different model specifications used to ensure rigour, much more work needs to be done. Firstly only the CHS dataset was used in this analysis, due to its spatial-temporal precision, and not the TTPS dataset. As the TTPS dataset aggregates to police divisions and monthly time periods however, I do not expect it to provide meaningful insights. As shown already, statistical significance decreases with higher levels of aggregation. Lastly, this analysis only covered the year 2025. At least three times as many PDOs have been executed in 2026 than 2025 so including this period would provide a wealth of information.</p>
+            <p>This is not a conclusive statement about the effect of states of emergency (SOE) in TnT, but rather it is a preliminary statement about how PDOs executed under these SOEs affect violent crime. Despite the 24 different model specifications used to ensure rigour, much more work needs to be done. Firstly, only the CHS dataset was used in this analysis, due to its spatial-temporal precision, and not the TTPS dataset. As the TTPS dataset aggregates to police divisions and monthly time periods however, I do not expect it to provide meaningful insights. As shown already, statistical significance decreases with higher levels of aggregation. Lastly, this analysis only covered the year 2025. At least three times as many PDOs have been executed in 2026 as compared to 2025, so including this period would provide a wealth of information.</p>
             <br>
             <p>Executing this project has been a long process, through which I learned a lot. Another step in this process remains: getting feedback from others. If you are reading this thank you very much for doing so. I look forward to your feedback.</p>
         </section>
