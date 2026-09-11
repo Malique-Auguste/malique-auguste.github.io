@@ -58,14 +58,19 @@
 
 
 @media (max-width: 800px) {
-    .section3 > .img-container {
+    .section3 > .subsection4 > .text-container {
+        position: static;
+        top: var(--v-spacing-4);
+    }
+
+    .section3 > .subsection4 > .img-container > img{
+        width: 60vw;
+        margin-bottom: var(--v-spacing-2);
+    }
+
+    .section3 > .subsection4 {
         flex-direction: column;
-        gap: var(--v-spacing-2);
-        margin: var(--v-spacing-2) 0;
+        margin: var(--v-spacing-2) var(--h-spacing-4);
+        gap: var(--v-spacing-2)
     }
-
-    .section3 > .img-container > img {
-        width: 65%
-    }
-
 }
