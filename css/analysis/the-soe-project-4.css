@@ -2,7 +2,7 @@
     margin-top: 0;
 }
 
-:is(.section1, .section2, .section3, .section4, .section5) > :is(p, span, ol, h3) {
+:is(.section1, .section2, .section3, .section4, .section5) > :is(p, span, ul, ol, h3) {
     margin: 0 var(--h-spacing-4)
 }
 
@@ -48,7 +48,7 @@
 
 .section3 > .subsection4 > .text-container {
     position: sticky;
-    top: var(--v-spacing-4);
+    top: var(--v-spacing-3);
 }
 
 .section3 > .subsection4 > .img-container > img{

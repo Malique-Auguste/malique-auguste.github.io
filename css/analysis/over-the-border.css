@@ -1,4 +1,4 @@
-.section1 > :is(p, span, ol, h3) {
+.section1 > :is(p, span, ul, ol, h3) {
     margin: 0 20vw;
 }
 
@@ -73,7 +73,7 @@ li>a {
     line-break: anywhere;
 }
 
-.section6 > :is(p, span, ol, h3) {
+.section6 > :is(p, span, ul, ol, h3) {
     margin: 0 20vw;
 }
 
