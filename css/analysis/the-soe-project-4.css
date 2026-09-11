@@ -2,7 +2,7 @@
     margin-top: 0;
 }
 
-:is(.section1, .section2, .section4, .section5) > :is(p, span, ol, h3) {
+:is(.section1, .section2, .section3, .section4, .section5) > :is(p, span, ol, h3) {
     margin: 0 var(--h-spacing-4)
 }
 
