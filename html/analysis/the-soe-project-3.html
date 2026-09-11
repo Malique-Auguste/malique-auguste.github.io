@@ -34,7 +34,7 @@
     <div id = "title">
         <div>
             <h1>The SOE Project: Part 3</h1>
-            <p>Data and variables | Aug 2026</p>
+            <p>Data and variables | Sept 2026</p>
         </div>
     </div>
 
@@ -70,16 +70,20 @@
                 <img src="../../media/Analysis/the-soe-project-3/grid_30.png" alt="">
                 <img src="../../media/Analysis/the-soe-project-3/grid_121.png" alt="">
             </div>
+            <br>
             <h3>Lags</h3>
             <p>For rigour I will include 2 levels of lags: 4 periods and 8 periods. If the results are consistent across these lags, then they are less likely to be caused by chance.</p>
+            <br>
             <h3>The Number Of Violent Crimes Committed, \(Y_{i,t}\)</h3>
             <p>This variable is a raw count on the number of violent crimes taking place in \(alpha_i\) for time period \(\alpha_t\). I will define the “violent” in “violent crime” in two ways, one which includes only the categories of crime that Gangs in The Caribbean (CITE) found to correlate with gang prevalence, and also more loosely as what I think constitutes the notion of “violent crime.”</p>
             <br>
             <p>When using the CHS dataset to construct \(Y_{i,t}\) precisely, I will count the crimes that they’ve categorized as “murder”, “attempted murder,” “shooting,” and “armed robbery.” When defining it more loosely, I will also include the crimes categorized as “home invasion”, “carjacking”, “extortion”, and “kidnapping.” When using the TTPS dataset to construct \(Y_{i,t}\) precisely, I will only include the offences categorized as “murders”, “woundings and shootings”, and “robbery.” When defining it more loosely, I will also include the crimes categorized as “larceny of motor vehicles” and “burglaries and break ins.”</p>
             <br>
             <p>Note that the CHS dataset can provide data for all variations of geographic subdivision, whereas the TTPS dataset can only provide data when analysing at the 4th level (police-divisions). </p>
+            <br>
             <h3>The Number Of PDOs Executed, \(X_{i,t}\)</h3>
             <p>This variable is a raw count of the number of PDOs executed in geographic region \(\alpha_i\) for time period \(\lambda_t\).</p>
+            <br>
             <h3>The Number of PDOs Executed in Neighbouring Regions, \(S_{i,t}\)</h3>
             <p>This variable is more complex than the others as the causal model doesn’t suggest just one way to define it. \(S_{i,t}\) was introduced to account for the fact that PDOs executed just across the border between neighbouring communities may affect crime rates within the community under consideration. Therefore, I could define \(S_{i,t}\) as the number of PDOs executed outside of \(\alpha_i\) but within its immediate neighbours.</p>
             <br>

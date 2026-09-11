@@ -158,7 +158,10 @@
         <section class = "section4">
             <h2>Conclusion</h2>
             <p>To understand how repeated SOEs affect the rate of violent crime in TnT, I will construct a dataset where each row corresponds to a specific region of the country for a specific week. The variables in each row will be: the number of violent crime committed, \(Y_{i,t}\), the number of PDOs executed with lags for \(j\) weeks, \(X'_{i,t}\), and the number of PDOs executed in neighbouring regions with lags for \(j\) weeks, \(S'_{i,t}\). I will statistically model this dataset using the pseudo-maximum likelihood method and two way fixed effects: geographic region, \(\alpha_i\), and time period or week, \(\lambda_t\). Given that I am using the PPML method, the regression equation is now:</p>
-            <p>\[\text{log}(E[Y_{i,t}|X,S])  = \beta'_1 X'_{i,t} + \beta'_2 S'_{i,t} + \alpha_i + \lambda_t\]</p>            
+            <p>\[\begin{align*}
+                    \text{log}(E[Y_{i,t}|X,S]) = &\beta'_1 X'_{i,t} + \beta'_2 S'_{i,t} \\
+                                                &+ \alpha_i + \lambda_t
+                \end{align*}\]</p>            
             <p>In the following post I will discuss my data sources and collection before outlining my preliminary results.</p>
         </section>
 

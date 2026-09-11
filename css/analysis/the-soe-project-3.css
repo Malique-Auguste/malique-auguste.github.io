@@ -2,7 +2,7 @@
     margin-top: 0;
 }
 
-:is(.section1, .section2, .section3) > :is(p, span, ol, h3) {
+:is(.section1, .section2, .section3, .section4, .section5) > :is(p, span, ol, h3) {
     margin: 0 var(--h-spacing-4)
 }
 
@@ -22,33 +22,14 @@
 
 
 @media (max-width: 800px) {
-    .section2 > .subsection1 {
+    .section3 > .img-container {
         flex-direction: column;
-        margin: 0 var(--h-spacing-4)
+        gap: var(--v-spacing-2);
+        margin: var(--v-spacing-2) 0;
     }
 
-    .section2 > .subsection1 > .img-container {
-        width: 100%;
-        position: static;
+    .section3 > .img-container > img {
+        width: 65%
     }
 
-    .section2 > .subsection1 > .text-container {
-        padding: var(--v-spacing-2) 0 0 0;
-    }
-
-    .section3 > :is(.subsection2, .subsection4) {
-        flex-direction: column;
-        margin: 0 var(--h-spacing-4);
-    }
-
-    .section3 > :is(.subsection2, .subsection4) > .text-container {
-        padding: 0;
-        width:100%;
-    }
-
-    .section3 > :is(.subsection2, .subsection4) > .img-container {
-        width: 100%;
-        position: static;
-        margin-top: var(--v-spacing-2);
-    }
 }
