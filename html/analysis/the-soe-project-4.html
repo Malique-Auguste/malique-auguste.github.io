@@ -255,7 +255,7 @@ When the government of Trinidad and Tobago (TnT) executed consecutive preventati
                 <br>
                 <p>\[e^{\alpha_i + \lambda_t} = \frac{E[Y_{i,t}|X,S]}{e^{\beta'_1 X^d_{i,t-1}} \times e^{\beta'_2 S^d_{i,t-1}}}\]</p>
                 <br>
-                <p>Therefore the amount of violent crime prevented by executing PDOs is \(e^{\alpha_i + \lambda_t} - E[Y_{i,t}|X,S]\). Confidence intervals for these figures will be calculated using parametric bootstrapping. An estimate of these values is given below:</p>
+                <p>Therefore the amount of violent crime prevented by executing PDOs is \(e^{\alpha_i + \lambda_t} - E[Y_{i,t}|X,S]\). Confidence intervals for these figures will be calculated using parametric bootstrapping. An estimate of these values is given below using 8 lags and precise definitions of "violent crime." Note that the models using 4-day long periods and 8 lags give insight into the effects over a 32 day period (shorter horizon), whereas the models using 7-day long periods and 8 lags give insight into the effects over a 56 day period (longer horizon).</p>
             </div>
 
             <div class = "subsection6">
@@ -342,10 +342,10 @@ When the government of Trinidad and Tobago (TnT) executed consecutive preventati
             </div>
 
             <div class = "subsection5">
-                <p>As shown by the table above, the models that use short time periods, such as 4 days, predict that PDOs decreased crime. When a longer view is taken, however, such as with the models that use 7 day periods, the results are statistically insignificant from zero. In the long run, the execution of a PDO doesn’t reduce violent crime, even if it appears to in the short run. Note that there is slight variation in the violent crime recorded depending on the length of the periods used, because since a year is not easily divisible into 4 or 7 day periods, at least a few days (and thus crimes) must be dropped from each model. Additionally, though I only list estimates generated from models that use the "cumulative equation," note that the findings were very similar for models using the "discrete equation."</p> 
+                <p>As shown by the table above, the models that use short periods, such as 4 days, predict that PDOs decreased crime. When a longer view is taken, however, such as with the models that use 7 day periods, the results are statistically insignificant from zero. In the long run, I cannot say conclusively that the execution of a PDO reduces violent crime, even if it appears to in the short run. Note that there is slight variation in the violent crime recorded depending on the length of the periods used. Since a year is not exactly divisible into 4 or 7 day periods, at least a few days (and thus crimes) must be dropped from each model. Additionally, though I only list estimates generated from models that use the "cumulative equation," note that the findings were very similar for models using the "discrete equation."</p> 
                 <br>
                 <h3>The Effect of Spillover is Minimal and Inconclusive</h3>
-                <p>Generally spillover was not found to be statistically significant. In only about half of all of the models was \(S_{i,t}\) found to be significant at the 1st lag. Notably, in all of the cases where it was statistically significant, its coefficient was positive at the 95% level. Though inconclusive, this suggests some sort of displacement effect. When a PDO is executed, free criminal actors move from that area into neighbouring communities, causing an uptick in violence.</p>
+                <p>Generally spillover was not found to be statistically significant. In only about half of all of the models was \(S_{i,t}\) found to be significant at the 1st lag. Notably, in all of the cases where it was statistically significant, its coefficient was positive at the 95% level. Though inconclusive, this suggests some sort of displacement effect. When a PDO is executed, free criminal actors may move from that area into neighbouring communities, causing an uptick in violence.</p>
             </div>
 
 
